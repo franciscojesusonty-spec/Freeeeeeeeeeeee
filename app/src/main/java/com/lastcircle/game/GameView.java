@@ -117,7 +117,7 @@ public final class GameView extends FrameLayout {
             if(mag>.12f)angle=(float)Math.atan2(dx,-dz);
         }
         void shoot(){
-            if(ammo<=0){if(reserve>0){int n=Math.min(30,reserve);reserve-=n;ammo=n;}return;}
+            if(ammo<=0){if(reserve>0){float n=Math.min(30,reserve);reserve-=n;ammo=n;}return;}
             ammo--;fireCd=.145f;
             Bot best=null;float nearest=43;
             for(Bot b:bots)if(b.alive){float d=distance(x,z,b.x,b.z);if(d<nearest){nearest=d;best=b;}}
